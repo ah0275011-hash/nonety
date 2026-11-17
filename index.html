@@ -1,0 +1,363 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Our Little Universe ♡</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Poppins:wght@300;400;500;600&family=Caveat:wght@400;500;600&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    >
+
+</head>
+
+<body>
+
+    <!-- BACKGROUND HEARTS -->
+    <div class="floating-hearts" id="hearts"></div>
+
+    <!-- BACKGROUND MUSIC -->
+    <audio id="music" loop>
+        <source src="assets/music/song.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- MUSIC BUTTON -->
+    <button
+        class="music-btn"
+        id="musicBtn"
+        onclick="toggleMusic()"
+        type="button"
+    >
+        <i class="fa-solid fa-volume-high"></i>
+    </button>
+
+
+    <!-- 01 PASSWORD SCREEN -->
+    <section class="screen active" id="lockScreen">
+
+        <div class="lock-card">
+
+            <div class="lock-icon">
+                <i class="fa-solid fa-heart"></i>
+            </div>
+
+            <span class="small-label">
+                A PRIVATE LITTLE WORLD
+            </span>
+
+            <h1>Just Between Us</h1>
+
+            <p>
+                Some memories are too special<br>
+                to be shared with the world.
+            </p>
+
+            <div class="password-box">
+
+                <input
+                    type="password"
+                    id="password"
+                    placeholder="Enter our secret password"
+                    autocomplete="off"
+                >
+
+                <i class="fa-solid fa-lock"></i>
+
+            </div>
+
+            <button
+                class="main-btn"
+                onclick="unlock()"
+                type="button"
+            >
+                Open Our World
+                <i class="fa-solid fa-arrow-right"></i>
+            </button>
+
+            <p class="error" id="error"></p>
+
+            <div class="bottom-note">
+                Made with love, just for you ♡
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- 02 INTRO SCREEN -->
+    <section class="screen" id="introScreen">
+
+        <div class="intro-container">
+
+            <div class="sparkle">✧</div>
+
+            <span class="small-label">
+                A LITTLE SOMETHING FOR YOU
+            </span>
+
+            <h1>Before You Begin...</h1>
+
+            <div class="typing-area">
+                <p id="typingText"></p>
+            </div>
+
+            <div id="introNext" class="hidden">
+
+                <button
+                    class="main-btn"
+                    onclick="showScreen('galleryScreen')"
+                    type="button"
+                >
+                    Let's Remember
+                    <i class="fa-solid fa-heart"></i>
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- 03 PHOTO GALLERY -->
+    <section class="screen" id="galleryScreen">
+
+        <div class="page-container">
+
+            <span class="small-label">
+                CHAPTER ONE
+            </span>
+
+            <h1 class="page-title">
+                Our Little Moments
+            </h1>
+
+            <p class="subtitle">
+                Every picture holds a thousand memories.
+            </p>
+
+            <div class="gallery" id="gallery">
+
+                <div class="photo-card">
+                    <img src="assets/image/images/photo1.jpg" alt="Our memory">
+                    <p>One of my favorite days ♡</p>
+                </div>
+
+                <div class="photo-card">
+                    <img src="assets/image/images/photo2.jpg" alt="Our memory">
+                    <p>Just us being us.</p>
+                </div>
+
+                <div class="photo-card">
+                    <img src="assets/image/images/photo3.jpg" alt="Our memory">
+                    <p>A moment worth keeping.</p>
+                </div>
+
+                <div class="photo-card">
+                    <img src="assets/image/images/photo4.jpg" alt="Our memory">
+                    <p>My favorite kind of chaos.</p>
+                </div>
+
+                <div class="photo-card">
+                    <img src="assets/image/images/photo5.jpg" alt="Our memory">
+                    <p>Little memories, big feelings.</p>
+                </div>
+
+                <div class="photo-card">
+                    <img src="assets/image/images/photo6.jpg" alt="Our memory">
+                    <p>Forever a favorite.</p>
+                </div>
+
+            </div>
+
+            <button
+                class="main-btn"
+                onclick="showScreen('movieScreen')"
+                type="button"
+            >
+                There's More
+                <i class="fa-solid fa-arrow-right"></i>
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- 04 VIDEO MEMORY -->
+    <section class="screen" id="movieScreen">
+
+        <div class="movie-container">
+
+            <span class="small-label">
+                CHAPTER TWO
+            </span>
+
+            <h1 class="page-title">
+                Our Little Movie
+            </h1>
+
+            <p class="subtitle">
+                If our friendship was a movie,
+                this would be my favorite scene.
+            </p>
+
+            <div class="video-frame">
+
+                <video controls playsinline preload="metadata">
+
+                    <source
+                        src="assets/video/our-video.mp4"
+                        type="video/mp4"
+                    >
+
+                    Your browser does not support this video.
+
+                </video>
+
+            </div>
+
+            <div class="movie-note">
+
+                <i class="fa-solid fa-quote-left"></i>
+
+                <p>
+                    Some people make ordinary days
+                    feel like something magical.
+                    You're one of them.
+                </p>
+
+                <span>— A little reminder for you</span>
+
+            </div>
+
+            <button
+                class="main-btn"
+                onclick="showScreen('cardsScreen')"
+                type="button"
+            >
+                Open Your Little Surprises
+                <i class="fa-solid fa-heart"></i>
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- 05 FLIP MEMORY CARDS -->
+    <section class="screen" id="cardsScreen">
+
+        <div class="page-container">
+
+            <span class="small-label">
+                CHAPTER THREE
+            </span>
+
+            <h1 class="page-title">
+                Little Things I Love
+            </h1>
+
+            <p class="subtitle">
+                Tap each picture to discover a little message.
+            </p>
+
+            <div class="flip-grid" id="flipGrid">
+
+                <!-- JavaScript generates the cards here -->
+
+            </div>
+
+            <p class="hint">
+                <i class="fa-solid fa-hand-pointer"></i>
+                Tap a memory to turn it around.
+            </p>
+
+            <button
+                class="main-btn"
+                onclick="showScreen('finalScreen')"
+                type="button"
+            >
+                One Last Thing...
+                <i class="fa-solid fa-envelope"></i>
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- 06 FINAL LETTER -->
+    <section class="screen" id="finalScreen">
+
+        <div class="final-container">
+
+            <div class="envelope-icon">
+                <i class="fa-solid fa-envelope-open-text"></i>
+            </div>
+
+            <span class="small-label">
+                THE LAST CHAPTER
+            </span>
+
+            <h1>To My Favorite Person</h1>
+
+            <div class="final-letter">
+
+                <p class="letter-start">
+                    Dear Bestie,
+                </p>
+
+                <p id="finalText"></p>
+
+                <p class="signature">
+                    With all my love,
+                    <br>
+                    Your Favorite Human ♡
+                </p>
+
+            </div>
+
+            <button
+                class="main-btn"
+                onclick="celebrate()"
+                type="button"
+            >
+                A Hug For You
+                <i class="fa-solid fa-heart"></i>
+            </button>
+
+            <p class="end-note" id="endNote">
+                No matter what, you'll always have a place in my heart.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- JAVASCRIPT -->
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
